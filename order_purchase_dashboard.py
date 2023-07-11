@@ -4,7 +4,7 @@ from dash import dcc
 from dash import html
 import plotly.express as px
 
-orders = pd.read_csv(r'C:\Users\ZhengHoom\Downloads\olist_orders_dataset.csv')
+orders = pd.read_csv("olist_orders_dataset.csv")
 orders['order_purchase_timestamp'] = pd.to_datetime(orders['order_purchase_timestamp'], format='%Y-%m-%d %H:%M:%S')
 
 orders_per_month = orders.groupby(pd.Grouper(key='order_purchase_timestamp', freq='M')).size().reset_index(name='Number of Orders')
