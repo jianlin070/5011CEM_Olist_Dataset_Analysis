@@ -3,7 +3,7 @@ import plotly.graph_objects as go
 from dash import dcc, html, Dash
 
 # Load the CSV data
-df_orders = pd.read_csv("https://raw.githubusercontent.com/LarsTinnefeld/olist_ecom_analysis/main/0%20-%20Data/olist_orders_dataset.csv")
+df_orders = pd.read_csv("olist_orders_dataset.csv")
 
 orders_upd = df_orders.copy()
 orders_upd["order_purchase_timestamp"] = pd.to_datetime(df_orders["order_purchase_timestamp"], format='%Y-%m-%d %H:%M:%S')
