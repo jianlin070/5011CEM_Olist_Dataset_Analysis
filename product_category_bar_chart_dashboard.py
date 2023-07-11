@@ -4,10 +4,10 @@ from dash import dcc
 from dash import html
 import plotly.express as px
 
-orders = pd.read_csv(r'C:\Users\ZhengHoom\Downloads\olist_orders_dataset.csv')
-items = pd.read_csv(r'C:\Users\ZhengHoom\Downloads\olist_order_items_dataset.csv')
-products = pd.read_csv(r'C:\Users\ZhengHoom\Downloads\olist_products_dataset.csv')
-translations = pd.read_csv(r'C:\Users\ZhengHoom\Downloads\product_category_name_translation.csv')
+orders = pd.read_csv("olist_orders_dataset.csv")
+items = pd.read_csv("olist_order_items_dataset.csv")
+products = pd.read_csv("olist_products_dataset.csv")
+translations = pd.read_csv("product_category_name_translation.csv")
 
 translations = translations.set_index('product_category_name')['product_category_name_english'].to_dict()
 products['product_category_name'] = products['product_category_name'].map(translations)
